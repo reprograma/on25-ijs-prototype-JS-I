@@ -1,7 +1,7 @@
 NOME:
 
 Imagine que você está criando o sistema para uma clínica veterinária. 
-Para isso, precisamos de construtores pseudoclássicos para quatro tipos e objeto diferentes: `Gatos`, `Cachorros`, `Exóticos` e `HistoricoMedico`.
+Para isso, precisamos de construtores Prototipais para quatro tipos e objeto diferentes: `Gatos`, `Cachorros`, `Exóticos` e `HistoricoMedico`.
 
 1. Exemplo de histórico médico
 
