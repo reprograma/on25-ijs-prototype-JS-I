@@ -11,3 +11,15 @@ Nome:
 5. Agora, transforme seu construtor funcional em um prototipal. Você consegue perceber as melhorias? Acha que ele ficou mais ou menos legível?
 
 6. **[Desafio]** Converta seu construtor da questão 5 para a estrutura pseudoclássica, mas modificando o histórico médico para ser seu próprio modelo também com um construtor pseudoclássico.
+
+1. let gato1 = {
+    nome: "Felícia",
+    dataNascimento: new Date(2021, 07, 01),
+    cor: "cinza",
+    historicoMedico: {
+        consultas: [],
+        vacinas: [],
+    },
+    miar: () => console.log("Miau")
+      
+}
