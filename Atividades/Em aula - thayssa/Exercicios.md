@@ -1,8 +1,49 @@
-Nome: 
+Nome: Thayssa Afonso Souza
 
 1. Comece criando um objeto `gato` com notação literal. Ele deve ter propriedades para `nome`, `dataNascimento` (um objeto `Date`), `cor`, e um objeto de historicoMedico (com uma listagem de consultas e outra de vacinas), e um método `comunicar()` que faz o gatinho miar ou ronronar. Você também pode adicionar outras propriedades que quiser. Crie dois gatinhos seguindo esse modelo.
 
+let gatinho1 = {
+    nome: "Sininho",
+    dataNascimento: new Date(2008, 05, 19),
+    cor: "rajada",
+    historicoMedico: {
+        consultas: [],
+        vacinas: []
+    },
+    comunicar: function(){
+        console.log("Miau miau")
+    }
+}
+
+let gatinho2 = {
+   nome: "Adolfo",
+    dataNascimento: new Date(2011, 06, 02),
+    cor: "preto",
+    historicoMedico: {
+        consultas: [],
+        vacinas: []
+    },
+    comunicar: () => console.log("Rrrrrrrr")
+}
+
+
 2. Modifique o objeto definido na questão anterior para ter uma nova propriedade `idade`. Ela deve ser um `getter` que utiliza a data de nascimento.
+
+gatinho2 = {
+    nome: "Adolfo",
+    dataNascimento: new Date(2011, 06, 02),
+    cor: "preto",
+    historicoMedico: {
+        consultas: [],
+        vacinas: []
+    },
+    comunicar: function(){
+        console.log("Rrrrrrrr");
+    },
+    get idade() {
+        return new Date() - this.dataNascimento;
+    }
+};
 
 3. **[Desafio]** Crie dois novos gatinhos e clone o conteúdo dos seus gatos originais para os novos objetos. Você consegue fazer isso **sem** que as referências de `historicoMedico` e `dataNascimento` dos novos objetos fiquem conectadas às propriedades dos objetos antigos?
 
