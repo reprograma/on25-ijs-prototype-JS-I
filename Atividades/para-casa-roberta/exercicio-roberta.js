@@ -1,6 +1,21 @@
 //Clínica Quatro Patas//
 
-const gato = {
+function Gato() {
+  return;
+}
+
+const gato = new Gato();
+(gato.nome = "Jade"),
+  (gato.idade = 36),
+  (gato.cor = "garfield"),
+  (gato.castrado = true),
+  (gato.historico = {
+    consultas: [(12 / 12 / 2023, 13 / 7 / 2022, 15 / 12 / 2021)],
+    vacinas: ["raiva", "v8", "v10"],
+    procedimentos: [{ tipo: "raio-x", motivo: "dores" }],
+  });
+
+/* const gato = {
   nome: "Jade",
   idade: 36,
   cor: "garfield",
@@ -38,3 +53,4 @@ const raposa = Object.create(null);
     procedimentos: [{ tipo: "ultrasom", motivo: "dores" }],
   });
 console.log(raposa);
+ */
