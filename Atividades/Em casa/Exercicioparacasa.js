@@ -36,7 +36,7 @@ jeca.consultas("20/11/2021");
 
 function Gatinho(nome, idade, cor, castrado, raça, externo) {
     this.nome = nome
-    this.idade = idade * 12 + ' meses'
+    this.idade = idade
     this.cor = cor
     this.castrado = castrado
     this.raça = raça

@@ -36,7 +36,7 @@ Doguinho.prototype.consultas = function(consulta) {
 
     function Gatinho(nome, idade, cor, castrado, raça, externo) {
             this.nome = nome
-            this.idade = idade * 12 + ' meses'
+            this.idade = idade
             this.cor = cor
             this.castrado = castrado
             this.raça = raça
@@ -89,13 +89,27 @@ Doguinho.prototype.consultas = function(consulta) {
     })
 }
 
+Exotico.prototype.vacinar = function (vacina) {
+    this.historico.vacinas.push(vacina);
+};
+
+Exotico.prototype.consultas = function (consulta) {
+    this.historico.consultas.unshift(consulta);
+};
+
 Bolotinha = new Exotico("Bolotinha", 3, "Laranja", "hamster")
 
-Louro = new Exotico("José", 4, "verde", "papagaio")
+Bolotinha.vacinar("HIV");
 
-Calopsita = new Exotico("Cacá", 4, "verde", "calopsita")
+Bolotinha.vacinar("raiva");
 
+Bolotinha.consultas("12/12/2019");
 
+Bolotinha.consultas("20/12/2022");
+
+// Louro = new Exotico("José", 4, "verde", "papagaio")
+
+// Calopsita = new Exotico("Cacá", 4, "verde", "calopsita")
 
 
 
