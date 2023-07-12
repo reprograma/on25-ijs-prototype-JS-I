@@ -29,7 +29,7 @@ function cat(name, age, color, castrated, external) {
     this.historic = new historicMedic()
 };
 
-cat.prototype.meow = () => { console.log("Meow Meow") };
+cat.prototype.meow = () => {console.log("Meow Meow")};
 
 function dog(name, age, color, castrated, race) {
     this.name = name,
