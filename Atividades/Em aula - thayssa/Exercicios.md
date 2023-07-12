@@ -13,7 +13,7 @@ let gatinho1 = {
     comunicar: function(){
         console.log("Miau miau")
     }
-}
+};
 
 let gatinho2 = {
    nome: "Adolfo",
@@ -24,7 +24,7 @@ let gatinho2 = {
         vacinas: []
     },
     comunicar: () => console.log("Rrrrrrrr")
-}
+};
 
 
 2. Modifique o objeto definido na questão anterior para ter uma nova propriedade `idade`. Ela deve ser um `getter` que utiliza a data de nascimento.
@@ -92,7 +92,7 @@ function PseuGatificadora(nomeDoGato, dataString, cor){
     this.dataString = new Date(dataString);
     this.cor = cor;
     this.historico = new HistoricoMedico();
-}
+};
 
 PseuGatificadora.prototype.comunicar = () => console.log("ron ron ron");
 
