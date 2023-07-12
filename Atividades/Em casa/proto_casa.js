@@ -49,21 +49,21 @@ function makeMoreExoticAnimals(name, age, color, species, adult) {
 
 Object.defineProperty(makeMoreExoticAnimals.prototype, "verificarAdulto", {
   get: function () {
-    if (this.species === "hamster") {
+    if (this.especie === "hamster") {
       if (this.age >= 2) {
         this.adulto = true;
       } else {
         this.adulto = false;
       }
     }
-    if (this.species === "papagaio") {
+    if (this.especie === "papagaio") {
       if (this.age >= 36) {
         this.adulto = true;
       } else {
         this.adulto = false;
       }
     }
-    if (this.species === "calopsita") {
+    if (this.especie === "calopsita") {
       if (this.age >= 18) {
         this.adulto = true;
       } else {
