@@ -1,6 +1,6 @@
 //Clínica Quatro Patas//
 
-function CatMaker(nome, cor, data) {
+/* function CatMaker(nome, cor, data) {
   const gatinho = {};
   gatinho.nome = nome;
   gatinho.cor = cor;
@@ -10,11 +10,22 @@ function CatMaker(nome, cor, data) {
 }
 
 jade = CatMaker("Jade", "Garfield", "2018-08-26");
-console.log(jade);
+console.log(jade); */
 
-/* let jade = CatMaker("jade", "frajola");
-console.log(jade);
- */
+const doguinhos = {
+  auau: function () {
+    console.log("Auuuuuu");
+  },
+};
+
+function DogMaker(nome) {
+  const novoDog = Object.create(doguinhos);
+  novoDog.nome = nome;
+  return novoDog;
+}
+
+Ozzy = DogMaker("Tobias");
+
 /* CatMaker.prototype.castrado = true;
 
 const gato = new Gato();
@@ -28,7 +39,7 @@ const gato = new Gato();
     procedimentos: [{ tipo: "raio-x", motivo: "dores" }],
   }); */
 
-/* const gato = {
+/*  const gato = {
   nome: "Jade",
   idade: 36,
   cor: "garfield",
@@ -52,9 +63,9 @@ const cachorro = {
     vacinas: ["raiva", "v8", "v10"],
     procedimentos: [{ tipo: "ultrassom", motivo: "dores" }],
   },
-};
+}; */
 
-const raposa = Object.create(null);
+/* const raposa = Object.create(null);
 
 (raposa.nome = "Esperta"),
   (raposa.idade = 24),
@@ -65,7 +76,6 @@ const raposa = Object.create(null);
     vacinas: ["raiva", "v8", "v10"],
     procedimentos: [{ tipo: "ultrasom", motivo: "dores" }],
   });
-console.log(raposa);
- */
+console.log(raposa); */
 
 /* function funcGtificadora() */
