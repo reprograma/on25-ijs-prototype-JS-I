@@ -28,7 +28,7 @@ function Cat(name, age, color, neutered, outdoor, medicalHistory) {
 }
 
 Cat.prototype.meow = function () {
-  console.log("The cat", this.name, "is meowing.");
+  console.log(this.name, "is meowing.");
 };
 
 Cat.prototype.vaccinate = function (vaccine) {
@@ -49,7 +49,7 @@ function Dog(name, age, color, neutered, breed, medicalHistory) {
 }
 
 Dog.prototype.bark = function () {
-  console.log("The dog", this.name, "is barking.");
+  console.log(this.name, "is AU AU.");
 };
 
 Dog.prototype.vaccinate = function (vaccine) {
