@@ -4,7 +4,6 @@ function HistoricoMedico() {
   this.vacinas = [], 
   this.procedimentos = [];
 }
-
 // construtor gatos
 function FazedoraDeGatos(nome, idade, cor, castrado, externo) {
   this.nome = nome;
@@ -37,7 +36,6 @@ phoebe.realizarConsulta("15/02/2022");
 phoebe.realizarConsulta("20/05/2022");
 
 //construtor cachorros
-
 function FazedoraDeCachorros(nome, idade, cor, castrado, raça) {
   this.nome = nome;
   this.idade = idade;
@@ -74,7 +72,6 @@ pancho.realizarConsulta("19/02/2020");
 pancho.realizarConsulta("05/01/2023");
 
 //construtor animais exóticos
-
 function FazedoraDeExoticos(nome, idade, cor, especie) {
   this.nome = nome;
   this.idade = idade;
