@@ -1,14 +1,5 @@
     Nome: Dória Fernandes
 
-    const metodoMed = {
-        vacinar: function(vacina){
-        this.historicoMedico.vacinas.push(vacina);
-        },
-        consultas: function(consulta){
-            this.historicoMedico.consultas.unshift(consulta);
-        },
-    };
-
     function historicoMedico() {
     this.consultas = [];
     this.vacinas = [];
@@ -45,7 +36,7 @@ Doguinho.prototype.consultas = function(consulta) {
 
     function Gatinho(nome, idade, cor, castrado, raça, externo) {
             this.nome = nome
-            this.idade = idade * 12
+            this.idade = idade * 12 + ' meses'
             this.cor = cor
             this.castrado = castrado
             this.raça = raça
@@ -73,14 +64,39 @@ Doguinho.prototype.consultas = function(consulta) {
 
     Lua.consultas("20/12/2023");
 
-    function Exotico (nome, idade, cor, especie, adulto){
-                this.nome = nome
-                this.idade = idade
-                this.cor = cor
-                this.especie = especie
-                this.adulto = adulto
-    }
+    function Exotico(nome, idade, cor, especie) {
+    this.nome = nome;
+    this.idade = idade;
+    this.cor = cor;
+    this.especie = especie;
 
-    Fox = new Exotico ("Fox", 3, "Laranja", "Raposa", true)
+    Object.defineProperty(Exotico, 'adulto', {
+        get: function () {
+            if (this.especie == 'hamster' && this.idade >= 2) {
+                return true;
+            }
+            if (this.especie == "papagaio" && this.idade >= 3) {
+                return true;
+            }
+            if (this.especie == "calopsita" && this.idade >= 18) {
+                return true;
+            }
+            return false;
+
+
+        }
+
+    })
+}
+
+Bolotinha = new Exotico("Bolotinha", 3, "Laranja", "hamster")
+
+Louro = new Exotico("José", 4, "verde", "papagaio")
+
+Calopsita = new Exotico("Cacá", 4, "verde", "calopsita")
+
+
+
+
 
 
