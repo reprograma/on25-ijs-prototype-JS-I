@@ -23,3 +23,68 @@ Nome:
     miar: () => console.log("Miau")
       
 }
+
+function historicoMedico(){
+    this.consultas = [];
+    this.vacinas = [];
+}
+
+function FuncGatificadora(nomeDeGato, dataString, cor){
+    const novoGato = {
+        get vacinas(){
+            return this.historico.vacinas
+            }
+        set vacinas(valor){
+            this.historico.vacinas.push(valor)
+        }
+        }
+    novoGato.nome = nomeDoGato
+    novoGato.dataNascimento = new Date(dataString)
+    novoGato.cor = cor
+    novoGato.historico = new historicoMedico
+    novoGato.comunicar = () => console.log("ron ron ron")
+    novoGato.examinar = () => function examinar(dataConsulta) {
+        this.historico.consultas.push(dataConsulta)
+    }
+
+    return novoGato
+}
+
+tobias.vacinas = ["raiva"]
+
+----PSEUDOCLASSICO
+
+function FuncGatificadora(nomeDeGato, dataString, cor){
+    this.nome = nomeDoGato
+    this.dataNascimento = new Date(dataString)
+    this.cor = cor
+    this.historico = new historicoMedico
+    
+}
+
+FuncGatificadora.prototype.comunicar = () => => {
+    console.log("ronronr")
+}
+
+FuncGatificadora.prototype.examinar = function(dataConsulta){
+    this.historico.consultas.push(dataConsulta)
+}
+
+tobias.examinar(new Date())
+tobias.historico.consultas
+
+tobias = new FunctGatificadora("Tobias", "2023-06-28", "cinza")
+
+get vacinas(){
+        return this.historico.vacinas
+    }
+
+Object.defineProperty(FuncGatificadora.prototype, "vacina", {get: function(){
+    return this.historico.vacinas
+}})
+
+Object.defineProperty(FuncGatificadora.prototype, "vacina", {
+    set: function(value){
+        this.historica.vacinas.push(value)
+    }
+})
