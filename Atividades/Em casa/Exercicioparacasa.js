@@ -76,7 +76,7 @@ function Exotico(nome, idade, cor, especie) {
             if (this.especie == 'hamster' && this.idade >= 2) {
                 return true;
             }
-            if (this.especie == "papagaio" && this.idade >= 3) {
+            if (this.especie == "papagaio" && this.idade >= 36) {
                 return true;
             }
             if (this.especie == "calopsita" && this.idade >= 18) {
