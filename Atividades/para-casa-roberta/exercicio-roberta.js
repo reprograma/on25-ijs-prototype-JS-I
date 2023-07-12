@@ -1,19 +1,32 @@
 //Clínica Quatro Patas//
 
-function Gato() {
-  return;
+function CatMaker(nome, cor, data) {
+  const gatinho = {};
+  gatinho.nome = nome;
+  gatinho.cor = cor;
+  gatinho.data = new Date(data);
+  gatinho.comunicar = () => console.log("miaaaaau");
+  return gatinho;
 }
 
+jade = CatMaker("Jade", "Garfield", "2018-08-26");
+console.log(jade);
+
+/* let jade = CatMaker("jade", "frajola");
+console.log(jade);
+ */
+/* CatMaker.prototype.castrado = true;
+
 const gato = new Gato();
-(gato.nome = "Jade"),
-  (gato.idade = 36),
-  (gato.cor = "garfield"),
-  (gato.castrado = true),
-  (gato.historico = {
+(this.nome = "Jade"),
+  (this.idade = 36),
+  (this.cor = "garfield"),
+  (this.castrado = true),
+  (this.historico = {
     consultas: [(12 / 12 / 2023, 13 / 7 / 2022, 15 / 12 / 2021)],
     vacinas: ["raiva", "v8", "v10"],
     procedimentos: [{ tipo: "raio-x", motivo: "dores" }],
-  });
+  }); */
 
 /* const gato = {
   nome: "Jade",
@@ -54,3 +67,5 @@ const raposa = Object.create(null);
   });
 console.log(raposa);
  */
+
+/* function funcGtificadora() */
