@@ -1,3 +1,8 @@
+function HistoricoMedico() {
+    this.consultas = [];
+    this.vacinas = [];
+}
+
 function Gatos(nomeDoGato, idade, cor) {
     this.nome = nomeDoGato
     this.idade = idade
@@ -7,30 +12,13 @@ function Gatos(nomeDoGato, idade, cor) {
     this.externo = false
 }
 
-Gatos.prototype.miar = () => console.log("miaauu")
-
-function HistoricoMedico() {
-    this.consultas = [];
-    this.vacinas = [];
-}
-
-Gatos.prototype.examinar = function (dataConsulta) {
-    this.historico.consultas.push(dataConsulta)
-}
-
 function Cachorros(nomeDocachorro, idade, cor, raca) {
-    this.nome = nomeDoGato
+    this.nome = nomeDocachorro
     this.idade = idade
     this.cor = cor
     this.historico = new HistoricoMedico()
     this.castrado = true
     this.raca = raca
-}
-
-Cachorros.prototype.latir = () => console.log("auu auu")
-
-Cachorros.prototype.examinar = function (dataConsulta) {
-    this.historico.consultas.push(dataConsulta)
 }
 
 function Exoticos(nomeDoBichinho, idade, cor, respecie) {
@@ -41,8 +29,27 @@ function Exoticos(nomeDoBichinho, idade, cor, respecie) {
     this.adulto = true
 }
 
-Exoticos.prototype.examinar = function (dataConsulta) {
+Gatos.prototype.miar = () => console.log("miaauu")
+Gatos.prototype.vacinar = function vacinar(vacina) {
+    this.historico.vacinas.push(vacina)
+}
+Gatos.prototype.consultar = function (dataConsulta) {
     this.historico.consultas.push(dataConsulta)
+}
+
+Cachorros.prototype.latir = () => console.log("auu auu")
+Cachorros.prototype.vacinar = function vacinar(vacina) {
+    this.historico.vacinas.push(vacina)
+}
+Cachorros.prototype.consultar = function (dataConsulta) {
+    this.historico.consultas.push(dataConsulta)
+}
+
+Exoticos.prototype.consultar = function (dataConsulta) {
+    this.historico.consultas.push(dataConsulta)
+}
+Exoticos.prototype.vacinar = function vacinar(vacina) {
+    this.historico.vacinas.push(vacina)
 }
 
 
