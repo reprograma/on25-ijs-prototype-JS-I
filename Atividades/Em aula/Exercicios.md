@@ -11,3 +11,22 @@ Nome:
 5. Agora, transforme seu construtor funcional em um prototipal. Você consegue perceber as melhorias? Acha que ele ficou mais ou menos legível?
 
 6. **[Desafio]** Converta seu construtor da questão 5 para a estrutura pseudoclássica, mas modificando o histórico médico para ser seu próprio modelo também com um construtor pseudoclássico.
+/*
+function PseuGatificadora(nomeDoGato, dataString, cor) {
+    this.nome = nomeDoGato
+    this.dataNascimento = new Date(dataString)
+    this.cor = cor
+    this.historico = new HistoricoMedico()
+}
+
+// Adicionamos os métodos ao Prototype
+PseuGatificadora.prototype.comunicar = () => console.log("ron ron ron")
+PseuGatificadora.prototype.examinar = function(dataConsulta) {
+    this.historico.consultas.push(dataConsulta)
+}
+
+Object.defineProperty(PseuGatificadora.prototype, "vacina", { get: function() {
+    return this.historico.vacinas
+}})
+
+tobias = new PseuGatificadora("Tobias", "2003-06-20", "cinza")
