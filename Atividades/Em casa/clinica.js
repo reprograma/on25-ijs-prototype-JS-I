@@ -40,16 +40,3 @@ AnimalExotico.prototype.consultar = function(ano, mes, dia) {
     this.historico.consulta.unshift(new Date(ano, mes - 1, dia))}
 
 
-yuki = new AnimalDomestico("gato", "Yuki", "6", "frajola")
-yuki.vacinar("raiva")
-yuki.comunicar()
-yuki.consultar(2023, 7, 12)
-
-sansao = new AnimalDomestico("cachorro", "Sansão", "30", "caramelo")
-sansao.vacinar("raiva")
-sansao.comunicar()
-sansao.consultar(2023, 7, 12)
-
-mimi = new AnimalExotico("papagaio", "mimi", "36", "laranja")
-mimi.vacinar("raiva")
-mimi.consultar(2023, 7, 12)
