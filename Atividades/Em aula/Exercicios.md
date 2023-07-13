@@ -42,6 +42,9 @@ tobias = FuncGatificadora("Tobias", "2003-06-20", "cinza")
 5. Agora, transforme seu construtor funcional em um prototipal. Você consegue perceber as melhorias? Acha que ele ficou mais ou menos legível?
 
 6. **[Desafio]** Converta seu construtor da questão 5 para a estrutura pseudoclássica, mas modificando o histórico médico para ser seu próprio modelo também com um construtor pseudoclássico.
+<<<<<<< HEAD
+/*
+=======
 
 // Criando um histórico médico
 ```
@@ -53,6 +56,7 @@ function HistoricoMedico() {
 
 // Criando um construtor que usa o histórico
 ```
+>>>>>>> f67deaadeaee7b03c120dca5cf6af5ff2a4dce9f
 function PseuGatificadora(nomeDoGato, dataString, cor) {
     this.nome = nomeDoGato
     this.dataNascimento = new Date(dataString)
@@ -70,9 +74,13 @@ Object.defineProperty(PseuGatificadora.prototype, "vacina", { get: function() {
     return this.historico.vacinas
 }})
 
+<<<<<<< HEAD
+tobias = new PseuGatificadora("Tobias", "2003-06-20", "cinza")
+=======
 Object.defineProperty(PseuGatificadora.prototype, "vacinas", { set: function(value) {
     this.historico.vacinas.push(value)
 }})
 
 tobias = new PseuGatificadora("Tobias", "2003-06-20", "cinza")
 ```
+>>>>>>> f67deaadeaee7b03c120dca5cf6af5ff2a4dce9f
