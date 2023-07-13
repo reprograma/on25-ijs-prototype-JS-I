@@ -10,7 +10,7 @@
 }
 
 jade = CatMaker("Jade", "Garfield", "2018-08-26");
-console.log(jade); */
+console.log(jade);
 
 const doguinhos = {
   auau: function () {
@@ -24,7 +24,7 @@ function DogMaker(nome) {
   return novoDog;
 }
 
-Ozzy = DogMaker("Tobias");
+Ozzy = DogMaker("Tobias"); */
 
 /* CatMaker.prototype.castrado = true;
 
@@ -79,3 +79,46 @@ const cachorro = {
 console.log(raposa); */
 
 /* function funcGtificadora() */
+
+//construtores
+
+function HistoricoMedico() {
+  (this.consultas = []),
+    (this.vacinas = []),
+    (this.procedimentos = [
+      {
+        tipo: "",
+        motivo: "",
+      },
+    ]);
+}
+
+function vacinar(vacina) {
+  this.HistoricoMedico.vacinas.push(vacina);
+}
+
+function castrar() {
+  this.HistoricoMedico.castrado = true;
+}
+
+//Catfy
+function Catfy(nome, cor, externo, castrado) {
+  this.nome = nome;
+  this.cor = cor;
+  this.castrado = castrado;
+  this.externo = externo;
+  this.historico = new HistoricoMedico();
+}
+
+Catfy.prototype.metodoMiar = () => console.log("miau miau");
+
+//objeto que será construido baseado no consteutor acima
+const jade = new Catfy("Jade", "preto", true, false);
+jade.miar = () => console.log("Minhaaau");
+
+jade.vacinar = vacinar;
+jade.castrar = castrar;
+
+console.log(jade);
+
+console.log(jade.HistoricoMedico.castrado);
