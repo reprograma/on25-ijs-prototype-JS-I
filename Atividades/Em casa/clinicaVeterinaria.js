@@ -48,6 +48,7 @@ function AnimaisExoticos(especieDoAnimalExotico, nomeDoAnimalExotico,dataString,
   this.nome = nomeDoAnimalExotico;
   this.nascimento = new Date(dataString);
   this.cor = corDoAnimalExotico;
+  this.historico = new HistoricoMedico();
 }
 
 let hamtaro = new AnimaisExoticos(
@@ -57,4 +58,9 @@ let hamtaro = new AnimaisExoticos(
   "amarelo"
 );
 
+console.log(hamtaro);
+
+console.log(hamtaro.historico.vacinas)
+hamtaro.historico.vacinar("gripe");
+console.log(hamtaro.historico.vacinas)
 console.log(hamtaro);
