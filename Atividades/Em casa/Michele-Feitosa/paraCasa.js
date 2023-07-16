@@ -1,54 +1,81 @@
-
-function historicoMedico() {
+// construtor para Historico Medico 
+function HistoricoMedico() {
     this.consultas = [];
     this.vacinas = [];
     this.procedimentos = [];
-}
+  }
 
-function vacinas(valor){
-    this.historico.vacinas.push(valor)
-}
+// adicionando uma consulta ao HM
+HistoricoMedico.prototype.consultar = function(data) {
+    this.consultas.unshift(data);
+  };
 
-function consultas(dataDaConsulta){
-   this.historico.consultas.push(dataDaConsulta)
-}
+// adicionando uma vacina ao HM
+HistoricoMedico.prototype.vacinar = function(vacina) {
+    this.vacinas.push(vacina);
+  }
 
-function Gatificadora (nome, cor, idade, castrado){
-    this.nome = nome,
-    this.cor = cor,
-    this.idade = idade, 
-    this.castrado = castrado,
-    this.historico = new historicoMedico()
-}
+// construtor de gatinhos 
 
-let marciaTeresa = new Gatificadora("Marcia Teresa", "tigrada", 16, true);
+  function Gato(nome, idade, cor, castrado, externo) {
+    this.nome = nome;
+    this.idade = idade;
+    this.cor = cor;
+    this.castrado = castrado;
+    this.externo = externo;
+    this.historico = new HistoricoMedico();
+  }
 
-Gatificadora.prototype.miar = function() { console.log("Miau")};
-Gatificadora.prototype.vacinar= vacinas("raiva");
+let marciaTeresa = new Gato("Marcia Teresa", "tigrada", 16, true);
+
+// ensinando Marcia Teresa a miar 
+Gato.prototype.miar = function() {
+    console.log("Miaaaaaaauuu!");
+  };
+
+// Construtor de Cachorro
+function Cachorro(nome, idade, cor, castrado, raca) {
+    this.nome = nome;
+    this.idade = idade;
+    this.cor = cor;
+    this.castrado = castrado;
+    this.raca = raca;
+    this.historico = new HistoricoMedico();
+  }
+
+ let safira = new Cachorro ("safira", 20, "preto e branco", false, "vira lata"); 
+ 
+ Cachorro.prototype.latir= function() { console.log("Au Au Au")};
 
 
-function Doguinhos(nome, cor, idade, castrado, raça){
-    this.nome = nome,
-    this.cor = cor,
-    this.idade = idade, 
-    this.castrado = castrado,
-    this.raça = raça,
-    this.historico = new historicoMedico()
-}
+ // Construtor de animais exóticos
 
- let safira = new doguinhos ("safira", "preto e cinza", 20, false, "vira lata"); //chamando a função
+ function Exotico(nome, idade, cor, especie) {
+    this.nome = nome;
+    this.idade = idade;
+    this.cor = cor;
+    this.especie = especie;
+    this.historico = new historicoMedico();
 
-Doguinhos.prototype.latir= function() { console.log("Au Au")};
 
-function Exoticos (nome, idade, cor, especie, adulto){
-    this.nome = nome,
-    this.idade = idade, 
-    this.cor = cor,
-    this.especie = especie,
-    this.adulto = adulto,
-    this.historico = new historicoMedico()
-}
+// getter pra verificar se é adulto
+  
+    Object.defineProperty(this, "adulto", {
+      get: function () {
+        if (this.especie === "hamster") {
+          return this.idade >= 2;
+        } else if (this.especie === "papagaio") {
+          return this.idade >= 36; 
+        } else if (this.especie === "calopsita") {
+          return this.idade >= 18;
+        } else {
+          return false; 
+        }
+      },
+    });
+  }
+  
+  let franklin = new Exotico("Franklin", 7, "cinza", "hamster");
+  console.log(franklin.adulto); // false
+  
 
-let franklin = new Exoticos("Franklin", 7, "cinza", "coelho", true);
-
-// NÃO CONSEGUI FAZER ESSA PARTE - Animais exóticos precisam de um `getter` para a propriedade `adulto`, que retorne `true` caso o animal já seja um adulto para a espécie dele e `false` caso contrário. Sua implementação pode cobrir apenas as seguintes espécies: hamster (adulto aos 2 meses), papagaio (aos 3 anos) e calopsita (18 meses). 
