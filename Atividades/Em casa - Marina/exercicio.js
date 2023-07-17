@@ -4,6 +4,17 @@ function HistoricoMedico() {
   this.vacinas = [], 
   this.procedimentos = [];
 }
+HistoricoMedico.prototype.realizarConsulta = function (consulta) {
+  this.consultas.unshift(consulta);
+};
+
+HistoricoMedico.prototype.realizarVacina = function (vacina) {
+  this.vacinas.push(vacina);
+};
+
+HistoricoMedico.prototype.realizarProcedimentos = function (tipo, motivo) {
+  this.procedimentos.push({ tipo: tipo, motivo: motivo });
+};
 // construtor gatos
 function FazedoraDeGatos(nome, idade, cor, castrado, externo) {
   this.nome = nome;
@@ -17,23 +28,12 @@ function FazedoraDeGatos(nome, idade, cor, castrado, externo) {
 FazedoraDeGatos.prototype.miar = function () {
   console.log("Miau");
 };
-FazedoraDeGatos.prototype.realizarConsulta = function (consulta) {
-  this.historico.consultas.unshift(consulta);
-};
-
-FazedoraDeGatos.prototype.realizarVacina = function (vacina) {
-  this.historico.vacinas.push(vacina);
-};
-
-FazedoraDeGatos.prototype.realizarProcedimentos = function (tipo, motivo) {
-  this.historico.procedimentos.push({ tipo: tipo, motivo: motivo });
-};
 
 let phoebe = new FazedoraDeGatos("Phoebe", 4, "preto", true, true);
-phoebe.realizarProcedimentos("ultrassom", "dores");
-phoebe.realizarVacina("raiva");
-phoebe.realizarConsulta("15/02/2022");
-phoebe.realizarConsulta("20/05/2022");
+phoebe.historico.realizarProcedimentos("ultrassom", "dores");
+phoebe.historico.realizarVacina("raiva");
+phoebe.historico.realizarConsulta("15/10/2020");
+phoebe.historico.realizarConsulta("08/05/2021");
 
 //construtor cachorros
 function FazedoraDeCachorros(nome, idade, cor, castrado, raça) {
@@ -48,17 +48,6 @@ FazedoraDeCachorros.prototype.latir = function () {
   console.log("AU AU");
 };
 
-FazedoraDeCachorros.prototype.realizarConsulta = function (consulta) {
-  this.historico.consultas.unshift(consulta);
-};
-FazedoraDeCachorros.prototype.realizarVacina = function (vacina) {
-  this.historico.vacinas.push(vacina);
-};
-
-FazedoraDeCachorros.prototype.realizarProcedimentos = function (tipo, motivo) {
-  this.historico.procedimentos.push({ tipo: tipo, motivo: motivo });
-};
-
 let pancho = new FazedoraDeCachorros(
   "Pancho",
   12,
@@ -66,10 +55,10 @@ let pancho = new FazedoraDeCachorros(
   false,
   "Pastor Belga Malinois"
 );
-pancho.realizarProcedimentos("injeção", "alergia");
-pancho.realizarVacina("hepatite");
-pancho.realizarConsulta("19/02/2020");
-pancho.realizarConsulta("05/01/2023");
+pancho.historico.realizarProcedimentos("injeção", "alergia");
+pancho.historico.realizarVacina("hepatite");
+pancho.historico.realizarConsulta("19/02/2020");
+pancho.historico.realizarConsulta("05/01/2023");
 
 //construtor animais exóticos
 function FazedoraDeExoticos(nome, idade, cor, especie) {
@@ -95,19 +84,9 @@ Object.defineProperty(FazedoraDeExoticos.prototype, "adulto", {
   }
 })
 
-FazedoraDeExoticos.prototype.realizarConsulta = function (consulta) {
-  this.historico.consultas.unshift(consulta);
-};
-FazedoraDeExoticos.prototype.realizarVacina = function (vacina) {
-  this.historico.vacinas.push(vacina);
-};
-
-FazedoraDeExoticos.prototype.realizarProcedimentos = function (tipo, motivo) {
-  this.historico.procedimentos.push({ tipo: tipo, motivo: motivo });
-};
 
 let hamtaro = new FazedoraDeExoticos("Hamtaro", 2, "branco", "Hamster");
-hamtaro.realizarProcedimentos("injeção", "alergia");
-hamtaro.realizarVacina("raiva");
-hamtaro.realizarConsulta("03/08/2019");
-hamtaro.realizarConsulta("10/07/2023");
+hamtaro.historico.realizarProcedimentos("injeção", "alergia");
+hamtaro.historico.realizarVacina("raiva");
+hamtaro.historico.realizarConsult("03/08/2019");
+hamtaro.historico.realizarConsult("10/07/2023");
