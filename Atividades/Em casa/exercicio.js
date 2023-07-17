@@ -39,7 +39,7 @@ Gatos.prototype.vacinar = function vacinar(vacina) {
     this.historico.vacinas.push(vacina)
 }
 Gatos.prototype.consultar = function (dataConsulta) {
-    this.historico.consultas.push(dataConsulta)
+    this.historico.consultas.unshift(dataConsulta)
 }
 
 Cachorros.prototype.latir = () => console.log("auu auu")
