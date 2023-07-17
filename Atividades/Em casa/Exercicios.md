@@ -1,4 +1,4 @@
-NOME:
+NOME: Danielly Francis Nascimento da Silva
 
 Imagine que você está criando o sistema para uma clínica veterinária. 
 Para isso, precisamos de construtores pseudoclássicos para quatro tipos e objeto diferentes: `Gatos`, `Cachorros`, `Exóticos` e `HistoricoMedico`.
@@ -58,3 +58,33 @@ Precisamos de alguns métodos, também:
     
 
 **Na semana que vem vamos revisar e expandir muitos dos conceitos usados nessa atividade, então capricha :D**
+
+
+function historicoMedico(animal) {
+    const novoAnimal = {
+        consultas,
+        vacinas,
+        procedimentos
+    }
+
+}
+
+function historicoMedico() {
+    this.consultas = []
+    this.vacinas = []
+    this.procedimentos = []
+}
+function Gato(nome, idade, cor, castrado, externo){
+    this.nome = nome;     
+    this.idade = idade;
+    this.cor = cor;
+    this.castrado = castrado;
+    this.externo = externo;
+    this.historico = new HistoricoMedico;
+}
+    Gato.prototype.miar = function () {console.log("miau")}
+    Gato.prototype.vacinar = function(vacina){
+        this.historico.vacinas.push(vacina)
+    }
+    Gato.prototype.consultar = function(date){
+        this.historico.consultas.unshift(date)
