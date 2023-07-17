@@ -21,13 +21,18 @@ function Cachorros(nomeDocachorro, idade, cor, raca) {
     this.raca = raca
 }
 
-function Exoticos(nomeDoBichinho, idade, cor, respecie) {
+function Exoticos(nomeDoBichinho, idade, cor, especie) {
     this.nome = nomeDoBichinho
     this.idade = idade
     this.cor = cor
     this.historico = new HistoricoMedico()
+    this.especie = especie
     this.adulto = true
 }
+
+let novoGato = new Gatos("Charmoso", 36, "branco" ) //idade em meses
+let novoCachorro = new Cachorros("Bóris", 36, "branco","shitzu") //idade em meses
+let novoExotico = new Exoticos("rex", 26, "marrom", "hamster" ) //idade em meses
 
 Gatos.prototype.miar = () => console.log("miaauu")
 Gatos.prototype.vacinar = function vacinar(vacina) {
@@ -52,4 +57,14 @@ Exoticos.prototype.vacinar = function vacinar(vacina) {
     this.historico.vacinas.push(vacina)
 }
 
-
+Exoticos.prototype.getAdulto = function () {
+    if (this.especie === "hamster") {
+        return this.idade >= 2;
+    }
+    if (this.especie === "papagaio") {
+        return this.idade >= 36;//considerando receber em meses
+    }
+    if (this.especie === "calopsita") {
+        return this.idade >= 18;
+    }
+}
